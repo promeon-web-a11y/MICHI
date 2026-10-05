@@ -1,0 +1,37 @@
+node_modules/
+.DS_Store
+supabase/.env.local
+supabase/.temp/
+src/database.types.ts
+supabase/.env.production
+
+# --- Secrets / env (never commit real values; *.example files are placeholders only) ---
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+!**/.env.*.example
+*.pem
+*.key
+*.p8
+*.p12
+*.jks
+service-account*.json
+credentials*.json
+
+# --- Supabase CLI local state ---
+supabase/.branches/
+supabase/.temp/
+
+# --- OS / IDE / logs ---
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+
+# ローカル API（scripts/local-api.mjs）の Storage
+.local-api/

@@ -1,0 +1,24 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Expo
+.expo/
+
+# Local development
+.local-api/
+
+# Git backup
+.git-backup/
+
+# OS
+.DS_Store
+Thumbs.db

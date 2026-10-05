@@ -1,0 +1,9 @@
+# Vercelへアップロードしないファイル（ビルドに不要・公開したくないもの）
+# 環境変数は .env.local ではなく Vercel の Project Settings > Environment Variables で設定する。
+.env*
+*.pem
+docs/
+tests/
+.next/
+node_modules/
+*.tsbuildinfo

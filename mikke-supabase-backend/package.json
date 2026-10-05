@@ -1,0 +1,34 @@
+{
+  "name": "mikke-supabase-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "supabase:start": "supabase start",
+    "db:reset": "supabase db reset",
+    "db:test": "supabase test db",
+    "db:test:local": "node scripts/db-test-local.mjs",
+    "local:api": "node scripts/local-api.mjs --seed",
+    "functions:serve": "supabase functions serve generate-plan --env-file supabase/.env.local",
+    "types:generate": "supabase gen types typescript --local > src/database.types.ts",
+    "check": "node scripts/static-check.mjs",
+    "login": "supabase login",
+    "link": "supabase link",
+    "db:push": "supabase db push",
+    "secrets:set": "supabase secrets set --env-file supabase/.env.production",
+    "functions:deploy": "supabase functions deploy generate-plan && supabase functions deploy resolve-place && supabase functions deploy extract-place-candidates && supabase functions deploy identify-place && supabase functions deploy save-place && supabase functions deploy generate-plan-options && supabase functions deploy route-plan && supabase functions deploy delete-account",
+    "functions:deploy:route-plan": "supabase functions deploy route-plan",
+    "functions:deploy:generate-plan-options": "supabase functions deploy generate-plan-options",
+    "functions:deploy:identify-place": "supabase functions deploy identify-place",
+    "functions:deploy:save-place": "supabase functions deploy save-place",
+    "types:generate:remote": "supabase gen types typescript --linked > src/database.types.ts",
+    "test:functions": "node --test tests/functions/plan.test.ts tests/functions/identify-place.test.ts tests/functions/save-place.test.ts tests/functions/plan-options.test.ts tests/functions/route-plan.test.ts tests/functions/delete-account.test.ts",
+    "functions:deploy:delete-account": "supabase functions deploy delete-account"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "supabase": "^2.117.0"
+  }
+}

@@ -1,0 +1,47 @@
+project_id = "mikke-local"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/**"]
+enable_signup = true
+
+[functions.generate-plan]
+verify_jwt = true
+
+[functions.resolve-place]
+verify_jwt = true
+
+[functions.extract-place-candidates]
+verify_jwt = true
+
+[functions.identify-place]
+verify_jwt = true
+
+[functions.save-place]
+verify_jwt = true
+
+[functions.generate-plan-options]
+verify_jwt = true
+
+[functions.route-plan]
+verify_jwt = true
+
+[functions.delete-account]
+verify_jwt = true
